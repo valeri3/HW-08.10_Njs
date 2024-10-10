@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculties</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Faculties</h1>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% faculties.forEach(faculty => { %>
+            <tr>
+                <td><%= faculty.Id %></td>
+                <td><%= faculty.Name %></td>
+                <td class="text-center">
+                    <a href="/faculties/edit/<%= faculty.Id %>" class="btn btn-warning btn-sm mt-0">Edit</a>
+                    <a href="/faculties/delete/<%= faculty.Id %>" class="btn btn-danger btn-sm mt-0">Delete</a>
+                </td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+    <a href="/faculties/add" class="btn btn-primary">Add Faculty</a>
+    <a href="/" class="btn btn-default">Back to Home</a>
+</div>
+</body>
+</html>

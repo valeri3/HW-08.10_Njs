@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Edit Student</h1>
+    <form action="/students/edit/<%= student.Id %>" method="POST" class="form-horizontal">
+        <div class="form-group">
+            <label for="firstName" class="col-sm-2 control-label">First Name:</label>
+            <div class="col-sm-10">
+                <input type="text" id="firstName" name="firstName" value="<%= student.FirstName %>" class="form-control" required maxlength="50">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-2 control-label">Last Name:</label>
+            <div class="col-sm-10">
+                <input type="text" id="lastName" name="lastName" value="<%= student.LastName %>" class="form-control" required maxlength="50">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="groupId" class="col-sm-2 control-label">Group ID:</label>
+            <div class="col-sm-10">
+                <input type="number" id="groupId" name="id_group" value="<%= student.Id_Group %>" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="term" class="col-sm-2 control-label">Term:</label>
+            <div class="col-sm-10">
+                <input type="number" id="term" name="term" value="<%= student.Term %>" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Update Student</button>
+                <a href="/students" class="btn btn-default">Back to Students</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
